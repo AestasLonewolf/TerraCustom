@@ -2368,7 +2368,7 @@
 +				int preSmash = 0;
 +				while ((float)preSmash < Main.setting.PreSmashAltar * 50f)
 +				{
-+					WorldGen.SmashAltar();
++					//WorldGen.SmashAltar();
 +					preSmash++;
 +				}
 +				WorldGen.altarCount = 0;
@@ -2685,17 +2685,17 @@
  
  								Main.chest[num2].item[num4].stack = stack21;
  								num4++;
-@@ -21697,13 +_,14 @@
- 			}
+@@ -21698,12 +_,14 @@
  		}
  
--		public static void SmashAltar(int i, int j) {
-+		public static void SmashAltar(/*int i, int j*/) {
-+			/*
- 			if (Main.netMode == 1 || !Main.hardMode || noTileActions || gen)
+ 		public static void SmashAltar(int i, int j) {
++			
+-			if (Main.netMode == 1 || !Main.hardMode || noTileActions || gen)
++			/*if (Main.netMode == 1 || !Main.hardMode || noTileActions || gen)
  				return;
 -
 +			*/
++			
  			int num = altarCount % 3;
  			int num2 = altarCount / 3 + 1;
 -			float num3 = Main.maxTilesX / 4200;
@@ -2751,7 +2751,7 @@
  				case 26:
  					if (!noTileActions && !IsGeneratingHardMode)
 -						SmashAltar(i, j);
-+						SmashAltar();
++						SmashAltar(i,j);
  					break;
  				case 298:
  					Item.NewItem(i * 16, j * 16, 32, 32, 2190);
